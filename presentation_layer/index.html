@@ -1,65 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8" />
+    <!-- Define la codificación de caracteres como UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hace el sitio responsivo para diferentes tamaños de pantalla -->
+
+    <!-- Enlaces a hojas de estilo externas -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Estilo personalizado -->
+
+    <!-- Título de la página -->
     <title>Hotel Costa Esmeralda - Inicio</title>
+
+    <!-- Estilo interno -->
     <style>
       html,
       body {
         height: 100%;
-        overflow-y: auto;
+        overflow-y: auto; /* Permite desplazamiento vertical */
       }
       .hero {
-        min-height: 50vh;
-        background: url("img/hero.jpg") no-repeat center center;
-        background-size: cover;
-        color: white;
-        display: flex;
+        min-height: 50vh; /* Altura mínima de la sección hero */
+        background: url("img/hero.jpg") no-repeat center center; /* Imagen de fondo */
+        background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+        color: white; /* Texto blanco */
+        display: flex; /* Flexbox para centrar contenido */
         align-items: center;
         justify-content: center;
-        text-align: center;
+        text-align: center; /* Centra el texto */
       }
       .hero h1,
       .hero p {
-        margin: 0;
+        margin: 0; /* Elimina márgenes */
       }
       .navbar-light {
-        background-color: #f8f9fa !important; /* Blanco un poco más oscuro */
+        background-color: #f8f9fa !important; /* Color de fondo ligeramente gris */
       }
       .footer {
-        background-color: #f8f9fa !important; /* Blanco un poco más oscuro */
+        background-color: #f8f9fa !important; /* Color de fondo del footer */
       }
       .footer p {
-        color: black; /* Cambiar el color del texto del footer a negro */
+        color: black; /* Texto negro en el footer */
       }
       .card {
-        max-width: 600px; /* Aumentar el tamaño de las tarjetas */
-        margin: auto; /* Centrar las tarjetas */
+        max-width: 600px; /* Tamaño máximo de las tarjetas */
+        margin: auto; /* Centra las tarjetas */
       }
       .section {
-        margin-top: 50px; /* Añadir espacio entre secciones */
-        margin-bottom: 70px; /* Añadir espacio entre secciones */
-        padding-top: 20px; /* Añadir padding para que el color se extienda */
-        padding-bottom: 20px; /* Añadir padding para que el color se extienda */
+        margin-top: 50px; /* Margen superior */
+        margin-bottom: 70px; /* Margen inferior */
+        padding-top: 20px; /* Espaciado interno superior */
+        padding-bottom: 20px; /* Espaciado interno inferior */
       }
       .full-width-section {
-        width: 100vw;
+        width: 100vw; /* Ancho completo */
         position: relative;
         left: 50%;
         right: 50%;
-        margin-left: -50vw;
+        margin-left: -50vw; /* Centrado de secciones completas */
         margin-right: -50vw;
       }
     </style>
   </head>
   <body>
-    <!-- Header -->
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">Costa Esmeralda</a>
+        <!-- Nombre del hotel como enlace -->
         <button
           class="navbar-toggler"
           type="button"
@@ -67,9 +79,14 @@
           data-target="#navbarResponsive"
         >
           <span class="navbar-toggler-icon"></span>
+          <!-- Ícono del menú móvil -->
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+            <!-- Enlaces del menú -->
+            <li class="nav-item">
+              <a class="nav-link" href="sobrenosotros.html">Sobre Nosotros</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="login.html">Iniciar Sesión</a>
             </li>
@@ -87,20 +104,22 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Sección Hero -->
     <header class="hero section full-width-section">
       <div class="container">
         <h1 class="display-4">Bienvenido al Hotel Costa Esmeralda</h1>
+        <!-- Título principal -->
         <p class="lead">
           Disfruta de una experiencia única en nuestro hotel de lujo.
         </p>
+        <!-- Subtítulo descriptivo -->
       </div>
     </header>
 
     <!-- Sección Descriptiva -->
     <div class="container-fluid section full-width-section">
       <div class="container">
-        <h2>Sobre Nosotros</h2>
+        <h2>Excelente Servicio</h2>
         <p>
           En Costa Esmeralda, estamos dedicados a ofrecer una experiencia
           inolvidable a cada uno de nuestros huéspedes. Desde nuestras
@@ -120,17 +139,20 @@
       </div>
     </div>
 
-    <!-- Contenido principal-->
+    <!-- Contenido Principal -->
     <div class="container-fluid mt-4 section full-width-section">
       <div class="container">
         <hr class="my-4" />
+        <!-- Separador -->
 
         <!-- Sección de Servicios -->
         <h2>Servicios</h2>
         <div class="row">
+          <!-- Tarjetas de servicios -->
           <div class="col-md-4">
             <div class="card mb-4">
               <img src="img/spa.jpg" class="card-img-top" alt="Spa" />
+              <!-- Imagen del spa -->
               <div class="card-body">
                 <h5 class="card-title">Spa</h5>
                 <p class="card-text">
@@ -146,6 +168,7 @@
                 class="card-img-top"
                 alt="Restaurante"
               />
+              <!-- Imagen del restaurante -->
               <div class="card-body">
                 <h5 class="card-title">Restaurante</h5>
                 <p class="card-text">
@@ -158,6 +181,7 @@
           <div class="col-md-4">
             <div class="card mb-4">
               <img src="img/pool.jpeg" class="card-img-top" alt="Piscina" />
+              <!-- Imagen de la piscina -->
               <div class="card-body">
                 <h5 class="card-title">Piscina</h5>
                 <p class="card-text">
@@ -178,6 +202,7 @@
       <div class="container">
         <h2>Reseñas de Clientes</h2>
         <div class="row">
+          <!-- Tarjetas de reseñas -->
           <div class="col-md-4">
             <div class="card mb-4">
               <div class="card-body">
@@ -211,38 +236,6 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Javier R.</h5>
-                <p class="card-text">
-                  "Un lugar espectacular para relajarse y disfrutar."
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">María L.</h5>
-                <p class="card-text">
-                  "Increíble atención y servicios de primera calidad."
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <div class="card-body">
-                <h5 class="card-title">Pablo G.</h5>
-                <p class="card-text">
-                  "Las instalaciones son impresionantes y muy cómodas."
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -251,114 +244,7 @@
       <div class="container">
         <h2>Habitaciones Disponibles</h2>
         <div class="row" id="habitaciones-disponibles">
-          <!-- Aquí se cargarán las habitaciones mediante AJAX -->
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <img
-                class="card-img-top"
-                src="./img/hotel.jpg"
-                alt="Habitación ${habitacion.numero_habitacion}"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Habitación</h5>
-                <p class="card-text">...</p>
-                <p class="card-text">
-                  <strong>Precio: $</strong>
-                </p>
-                <a href="login.html" class="btn btn-primary">Reservar</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <img
-                class="card-img-top"
-                src="./img/hotel.jpg"
-                alt="Habitación ${habitacion.numero_habitacion}"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Habitación</h5>
-                <p class="card-text">...</p>
-                <p class="card-text">
-                  <strong>Precio: $</strong>
-                </p>
-                <a href="login.html" class="btn btn-primary">Reservar</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <img
-                class="card-img-top"
-                src="./img/hotel.jpg"
-                alt="Habitación ${habitacion.numero_habitacion}"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Habitación</h5>
-                <p class="card-text">...</p>
-                <p class="card-text">
-                  <strong>Precio: $</strong>
-                </p>
-                <a href="login.html" class="btn btn-primary">Reservar</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <img
-                class="card-img-top"
-                src="./img/hotel.jpg"
-                alt="Habitación ${habitacion.numero_habitacion}"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Habitación</h5>
-                <p class="card-text">...</p>
-                <p class="card-text">
-                  <strong>Precio: $</strong>
-                </p>
-                <a href="login.html" class="btn btn-primary">Reservar</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <img
-                class="card-img-top"
-                src="./img/hotel.jpg"
-                alt="Habitación ${habitacion.numero_habitacion}"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Habitación</h5>
-                <p class="card-text">...</p>
-                <p class="card-text">
-                  <strong>Precio: $</strong>
-                </p>
-                <a href="login.html" class="btn btn-primary">Reservar</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card mb-4">
-              <img
-                class="card-img-top"
-                src="./img/hotel.jpg"
-                alt="Habitación ${habitacion.numero_habitacion}"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Habitación</h5>
-                <p class="card-text">...</p>
-                <p class="card-text">
-                  <strong>Precio: $</strong>
-                </p>
-                <a href="login.html" class="btn btn-primary">Reservar</a>
-              </div>
-            </div>
-          </div>
+          <!-- Contenido generado dinámicamente mediante AJAX -->
         </div>
       </div>
     </div>
@@ -370,24 +256,27 @@
     >
       <div class="container">
         <p class="mb-0 text-center">
-          &copy; 2024 Hotel XYZ. Todos los derechos reservados.
+          &copy; 2024 Costa Esmeralda. Todos los derechos reservados.
         </p>
       </div>
     </footer>
 
-    <!-- Enlaces a JavaScript-->
+    <!-- Enlaces a JavaScript -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- jQuery -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="assets/js/main.js"></script>
+    <!-- Script principal -->
     <script>
       // Cargar habitaciones disponibles al cargar la página
       $(document).ready(function () {
         $.ajax({
-          url: "/api/habitaciones/disponibles",
-          method: "GET",
+          url: "/api/habitaciones/disponibles", // URL para obtener datos de habitaciones
+          method: "GET", // Método HTTP
           success: function (data) {
-            var habitaciones = data;
-            $.each(habitaciones, function (index, habitacion) {
+            // Iterar sobre las habitaciones y agregar contenido dinámico
+            $.each(data, function (index, habitacion) {
               var habitacionHtml = `
                           <div class="col-md-4">
                               <div class="card mb-4">
@@ -405,7 +294,7 @@
             });
           },
           error: function (error) {
-            console.log(error);
+            console.log(error); // Manejo de errores
           },
         });
       });

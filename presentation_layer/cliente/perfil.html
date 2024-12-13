@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Declaración del tipo de documento y configuración del idioma -->
+    <meta charset="UTF-8" />
+    <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configuración para dispositivos responsivos -->
+
+    <!-- Enlace a hojas de estilo externas -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Estilos de Bootstrap -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <!-- Estilos personalizados -->
+
+    <!-- Título de la página -->
+    <title>Hotel Costa Esmeralda - Registro de Usuario</title>
+
+    <!-- Estilos CSS internos para personalización adicional -->
+    <style>
+      /* Configuración general para ocupar toda la altura */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      /* Estilo claro para la barra de navegación */
+      .navbar-light {
+        background-color: #f8f9fa !important;
+      }
+      /* Estilo para el pie de página */
+      footer {
+        background-color: #f8f9fa;
+        color: black;
+      }
+      /* Centrado del contenido principal */
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /* Bordes redondeados en los campos de formulario */
+      .form-control {
+        border-radius: 0.5rem;
+      }
+      /* Personalización del botón principal */
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 0.5rem;
+      }
+      /* Efecto hover en el botón principal */
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Encabezado con barra de navegación -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+          <!-- Logotipo y enlace a la página de inicio -->
+          <a class="navbar-brand" href="index.html">Costa Esmeralda</a>
+
+          <!-- Botón para mostrar/ocultar el menú en pantallas pequeñas -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Opciones del menú de navegación -->
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <!-- Enlace a la sección Sobre Nosotros -->
+              <li class="nav-item">
+                <a class="nav-link" href="sobrenosotros.html">Sobre Nosotros</a>
+              </li>
+              <!-- Enlace a la página de inicio de sesión -->
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Iniciar Sesión</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contenido principal de la página -->
+    <main>
+      <section class="container">
+        <!-- Formulario de registro de usuario -->
+        <form id="form-registro" class="mt-4">
+          <!-- Campo para ingresar el nombre completo -->
+          <div class="form-group">
+            <label for="nombre">Nombre Completo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Ingresa tu nombre"
+              required
+            />
+          </div>
+
+          <!-- Campo para ingresar el correo electrónico -->
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Ingresa tu correo"
+              required
+            />
+          </div>
+
+          <!-- Campo para ingresar la contraseña -->
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Crea una contraseña"
+              required
+            />
+          </div>
+
+          <!-- Botón para enviar el formulario -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-3">
+              Registrarse
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="py-4 text-center">
+      <div class="container">
+        <p>&copy; 2023 Costa Esmeralda. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Enlaces a scripts JavaScript externos -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Librería jQuery -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts de Bootstrap -->
+  </body>
+</html>

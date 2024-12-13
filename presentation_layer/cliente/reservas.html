@@ -3,15 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <title>Mis Reservas</title>
+    <!-- Enlace a la hoja de estilos de Bootstrap para diseño responsivo y componentes predefinidos -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Enlace a la hoja de estilos para DataTables, una librería de tablas interactivas -->
     <link rel="stylesheet" href="../assets/css/jquery.dataTables.min.css" />
   </head>
   <body>
+    <!-- Contenedor principal con margen superior -->
     <div class="container mt-5">
+      <!-- Título de la página -->
       <h2>Mis Reservas</h2>
+      <!-- Tabla para mostrar las reservas -->
       <table id="tabla-reservas" class="display">
         <thead>
           <tr>
+            <!-- Encabezados de las columnas de la tabla -->
             <th>ID</th>
             <th>Habitación</th>
             <th>Fecha Inicio</th>
@@ -20,29 +26,39 @@
           </tr>
         </thead>
         <tbody></tbody>
+        <!-- Cuerpo de la tabla donde se cargarán las filas dinámicamente -->
       </table>
     </div>
 
-    <script src="../assets/js/jquery.min.js"></script>
+    <!-- Enlace a la librería jQuery para manipulación del DOM y solicitudes AJAX -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Enlace a la librería DataTables para funcionalidades avanzadas de tablas -->
     <script src="../assets/js/jquery.dataTables.min.js"></script>
+    <!-- Enlace al archivo de JavaScript principal del proyecto -->
     <script src="../assets/js/main.js"></script>
     <script>
       // cliente/reservas.html
+      // Función principal que se ejecuta cuando el DOM está completamente cargado
       $(document).ready(function () {
+        // Obtener el token almacenado en localStorage
         var token = localStorage.getItem("token");
+
+        // Si no hay token, redirigir al usuario a la página de inicio de sesión
         if (!token) {
           window.location.href = "../login.html";
         }
 
+        // Realizar una solicitud AJAX al servidor para obtener las reservas del cliente
         $.ajax({
-          url: "/api/reservas/cliente",
-          method: "GET",
+          url: "/api/reservas/cliente", // URL de la API para obtener reservas
+          method: "GET", // Método HTTP utilizado para la solicitud
           headers: {
-            Authorization: "Bearer " + token,
+            Authorization: "Bearer " + token, // Incluir el token de autenticación en los encabezados
           },
           success: function (data) {
-            // Renderizar las reservas en la tabla
+            // Si la solicitud es exitosa, iterar sobre los datos recibidos y renderizar las filas en la tabla
             $.each(data, function (index, reserva) {
+              // Crear dinámicamente una fila para cada reserva
               var row = `
                     <tr>
                         <td>${reserva.id}</td>
@@ -52,11 +68,14 @@
                         <td>${reserva.estado}</td>
                     </tr>
                 `;
+              // Agregar la fila al cuerpo de la tabla
               $("#tabla-reservas tbody").append(row);
             });
+            // Inicializar la tabla con la funcionalidad de DataTables
             $("#tabla-reservas").DataTable();
           },
           error: function (error) {
+            // Manejo de errores en caso de que la solicitud falle
             alert("Error al cargar las reservas");
           },
         });

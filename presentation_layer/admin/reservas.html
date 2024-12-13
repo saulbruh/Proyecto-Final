@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos y configuración -->
+    <meta charset="UTF-8" />
+    <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configuración para diseño responsive -->
+
+    <!-- Enlaces a hojas de estilo -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="../assets/css/datatables.min.css" />
+    <!-- DataTables CSS -->
+
+    <title>Hotel Costa Esmeralda - AdminReservas</title>
+    <!-- Título de la página -->
+
+    <!-- Estilos en línea -->
+    <style>
+      html,
+      body {
+        height: 100%; /* Altura completa para cuerpo y HTML */
+        margin: 0; /* Sin márgenes externos */
+        display: flex; /* Uso de Flexbox */
+        flex-direction: column; /* Elementos alineados verticalmente */
+      }
+      main {
+        flex: 1; /* Ocupa el espacio disponible */
+        display: flex; /* Flexbox para contenido centrado */
+        justify-content: center; /* Alineación horizontal centrada */
+        align-items: center; /* Alineación vertical centrada */
+        height: 100vh; /* Altura completa de la ventana */
+      }
+      .navbar-light {
+        background-color: #f8f9fa !important; /* Estilo personalizado de la barra de navegación */
+      }
+      footer {
+        background-color: #f8f9fa; /* Fondo claro */
+        color: black; /* Texto negro */
+      }
+      .table-container {
+        width: 100%; /* Ancho completo */
+        max-width: 900px; /* Ancho máximo */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cabecera con navegación -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+          <!-- Contenedor centrado para contenido -->
+          <a class="navbar-brand" href="index.html">Costa Esmeralda</a>
+          <!-- Enlace al inicio -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+          >
+            <span class="navbar-toggler-icon"></span>
+            <!-- Icono de menú responsive -->
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <!-- Menú de navegación -->
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                <!-- Enlace al login -->
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="register.html">Registrarse</a>
+                <!-- Enlace al registro -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+      <section class="table-container">
+        <!-- Contenedor principal de la tabla -->
+        <h1 class="text-center">Administración de Habitaciones Reservadas</h1>
+        <!-- Título centrado -->
+        <table
+          id="tabla-habitaciones-reservadas"
+          class="display table table-striped table-bordered"
+        >
+          <thead>
+            <!-- Encabezado de la tabla -->
+            <tr>
+              <th>ID</th>
+              <!-- Columna ID -->
+              <th>Número</th>
+              <!-- Columna Número -->
+              <th>Cliente</th>
+              <!-- Columna Cliente -->
+              <th>Fecha Inicio</th>
+              <!-- Columna Fecha Inicio -->
+              <th>Fecha Fin</th>
+              <!-- Columna Fecha Fin -->
+              <th>Estado</th>
+              <!-- Columna Estado -->
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filas cargadas dinámicamente mediante AJAX -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="py-4 text-center">
+      <div class="container">
+        <p>&copy; 2023 Costa Esmeralda. Todos los derechos reservados.</p>
+        <!-- Mensaje de copyright -->
+      </div>
+    </footer>
+
+    <!-- Scripts necesarios -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <!-- jQuery -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="../assets/js/datatables.min.js"></script>
+    <!-- DataTables JavaScript -->
+
+    <!-- Configuración de DataTables -->
+    <script>
+      $(document).ready(function () {
+        $("#tabla-habitaciones-reservadas").DataTable({
+          ajax: {
+            url: "/api/habitaciones-reservadas" /* URL de la API para cargar los datos */,
+            dataSrc: "" /* Fuente de los datos (array de objetos) */,
+          },
+          columns: [
+            { data: "id" } /* Columna ID */,
+            { data: "numero" } /* Columna Número */,
+            { data: "cliente" } /* Columna Cliente */,
+            { data: "fecha_inicio" } /* Columna Fecha Inicio */,
+            { data: "fecha_fin" } /* Columna Fecha Fin */,
+            { data: "estado" } /* Columna Estado */,
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,4 +1,3 @@
-<!-- admin/reservas.html-->
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -7,13 +6,55 @@
     <link rel="stylesheet" href="assets/css/datatables.min.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Hotel Costa Esmeralda - Administración</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        overflow-y: auto;
+      }
+      .navbar-light {
+        background-color: #f8f9fa !important;
+      }
+      footer {
+        background-color: #f8f9fa;
+        color: black;
+      }
+      .hero {
+        min-height: 50vh;
+        background: url("img/reservas-hero.jpg") no-repeat center center;
+        background-size: cover;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .hero h1 {
+        margin: 0;
+      }
+      .form-control {
+        border-radius: 0.5rem;
+      }
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 0.5rem;
+      }
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+      table {
+        margin-top: 20px;
+      }
+    </style>
   </head>
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="index.html">Hotel XYZ</a>
+          <a class="navbar-brand" href="index.html">Costa Esmeralda</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -23,7 +64,6 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
-            <!-- Menú de navegación -->
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <a class="nav-link" href="login.html">Iniciar Sesión</a>
@@ -37,12 +77,14 @@
       </nav>
     </header>
 
-    <!-- Contenido principal-->
+    <!-- Contenido principal -->
     <main>
-      <section class="d-flex justify-content-center align-items-center vh-100">
+      <section class="container mt-5">
         <div class="container">
-          <h1 class="mt-4">Administración de Reservas</h1>
-          <table id="tabla-reservas" class="display">
+          <table
+            id="tabla-reservas"
+            class="display table table-striped table-bordered"
+          >
             <thead>
               <tr>
                 <th>ID</th>
@@ -54,20 +96,21 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Contenido cargado mediante AJAX-->
+              <!-- Contenido cargado mediante AJAX -->
             </tbody>
           </table>
         </div>
       </section>
     </main>
 
-    <!-- footer.html-->
-    <footer class="py-4 bg-dark text-white-50">
-      <div class="container text-center">
-        <small>© 2023 Hotel XYZ. Todos los derechos reservados.</small>
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+      <div class="container">
+        <p>&copy; 2023 Costa Esmeralda. Todos los derechos reservados.</p>
       </div>
     </footer>
-    <!-- Enlaces a JavaScript-->
+
+    <!-- Enlaces a JavaScript -->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/datatables.min.js"></script>

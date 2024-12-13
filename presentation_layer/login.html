@@ -1,33 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+  <!-- Etiqueta principal del documento HTML. El atributo "lang" especifica que el idioma del contenido es español. -->
   <head>
+    <!-- Contiene metadatos y enlaces externos para el documento. -->
     <meta charset="UTF-8" />
+    <!-- Especifica la codificación de caracteres como UTF-8. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Configura el sitio para que sea responsive, ajustándose al ancho del dispositivo. -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- Enlace a los estilos CSS de Bootstrap. -->
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <title>Document</title>
+    <!-- Enlace a un archivo CSS personalizado. -->
+    <title>Hotel Costa Esmeralda - Iniciar Sesión</title>
+    <!-- Define el título que se mostrará en la pestaña del navegador. -->
+    <style>
+      /* Estilos CSS integrados dentro del documento. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      /* Configura la altura y el diseño general de la página. */
+      .navbar-light {
+        background-color: #f8f9fa !important;
+      }
+      /* Define el color de fondo de la barra de navegación. */
+      footer {
+        background-color: #f8f9fa;
+        color: black;
+      }
+      /* Estilo del pie de página. */
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /* Centra vertical y horizontalmente el contenido principal. */
+      .form-control {
+        border-radius: 0.5rem;
+      }
+      /* Aplica un borde redondeado a los campos del formulario. */
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 0.5rem;
+      }
+      /* Estilo para los botones principales del formulario. */
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+      /* Estilo al pasar el ratón por encima del botón. */
+    </style>
   </head>
   <body>
+    <!-- Inicio del cuerpo del documento. -->
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <!-- Contenedor del encabezado del sitio. -->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <!-- Barra de navegación. Se usa Bootstrap para la estructura y estilos. -->
         <div class="container">
-          <a class="navbar-brand" href="index.html">Hotel XYZ</a>
+          <!-- Contenedor centralizado. -->
+          <a class="navbar-brand" href="index.html">Costa Esmeralda</a>
+          <!-- Enlace al inicio del sitio. -->
           <button
             class="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarResponsive"
           >
+            <!-- Botón que despliega el menú en pantallas pequeñas. -->
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
-            <!-- Menú de navegación -->
+            <!-- Contenedor colapsable para los elementos del menú. -->
             <ul class="navbar-nav ml-auto">
+              <!-- Lista de elementos del menú alineados a la derecha. -->
               <li class="nav-item">
-                <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                <a class="nav-link" href="sobrenosotros.html">Sobre Nosotros</a>
+                <!-- Enlace a la sección "Sobre Nosotros". -->
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="register.html">Registrarse</a>
+                <!-- Enlace a la página de registro. -->
               </li>
             </ul>
           </div>
@@ -35,35 +92,61 @@
       </nav>
     </header>
 
+    <!-- Contenido principal del sitio. -->
     <main>
-      <section class="d-flex justify-content-center align-items-center vh-100">
-        <form id="login-form">
+      <!-- Sección que contiene el formulario de inicio de sesión. -->
+      <section class="container">
+        <form id="login-form" class="mt-4">
+          <!-- Formulario con identificación "login-form". -->
           <div class="form-group">
             <label for="email">Correo Electrónico</label>
-            <input type="email" class="form-control" id="email" required />
+            <!-- Etiqueta para el campo de correo electrónico. -->
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Ingresa tu correo"
+              required
+            />
+            <!-- Campo para ingresar el correo. Es obligatorio. -->
           </div>
           <div class="form-group">
             <label for="password">Contraseña</label>
+            <!-- Etiqueta para el campo de contraseña. -->
             <input
               type="password"
               class="form-control"
               id="password"
+              placeholder="Ingresa tu contraseña"
               required
             />
+            <!-- Campo para ingresar la contraseña. Es obligatorio. -->
           </div>
-          <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-3">
+              Iniciar Sesión
+            </button>
+            <!-- Botón para enviar el formulario. -->
+          </div>
         </form>
       </section>
     </main>
 
-    <!-- footer.html -->
-    <footer class="py-4 bg-dark text-white-50">
-      <div class="container text-center">
-        <small>© 2023 Hotel XYZ. Todos los derechos reservados.</small>
+    <!-- Pie de página. -->
+    <footer class="py-4 text-center">
+      <div class="container">
+        <!-- Contenedor para el texto del pie de página. -->
+        <p>&copy; 2023 Costa Esmeralda. Todos los derechos reservados.</p>
+        <!-- Aviso de derechos reservados. -->
       </div>
     </footer>
 
-    <!-- Incluir el archivo de autenticación -->
+    <!-- Enlaces a archivos JavaScript necesarios para el funcionamiento. -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- Biblioteca jQuery para facilitar la manipulación del DOM. -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- JavaScript de Bootstrap para elementos interactivos. -->
     <script src="assets/js/auth.js"></script>
+    <!-- Archivo JavaScript personalizado para manejar la autenticación. -->
   </body>
 </html>

@@ -1,30 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Metadatos y configuraciones básicas -->
     <meta charset="UTF-8" />
-    <title>Administrar Habitaciones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Enlaces a hojas de estilos externas -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/datatables.min.css" />
+
+    <!-- Título de la página -->
+    <title>Hotel Costa Esmeralda - AdminHabitaciones</title>
+
+    <!-- Estilos en línea -->
+    <style>
+      /* Ajusta la altura y diseño de la página para ocupar toda la ventana */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      /* Estilo para el contenedor principal */
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      /* Personalización de la barra de navegación */
+      .navbar-light {
+        background-color: #f8f9fa !important;
+      }
+      /* Estilo del pie de página */
+      footer {
+        background-color: #f8f9fa;
+        color: black;
+      }
+      /* Contenedor de la tabla con ancho máximo */
+      .table-container {
+        width: 100%;
+        max-width: 900px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container mt-5">
-      <h2>Gestión de Habitaciones</h2>
-      <table id="tabla-habitaciones" class="display">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Número</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
+    <!-- Encabezado con la barra de navegación -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+          <!-- Logotipo del sitio -->
+          <a class="navbar-brand" href="index.html">Costa Esmeralda</a>
+          <!-- Botón para el menú colapsable en dispositivos pequeños -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Menú de navegación -->
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <!-- Enlace para iniciar sesión -->
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Iniciar Sesión</a>
+              </li>
+              <!-- Enlace para registrarse -->
+              <li class="nav-item">
+                <a class="nav-link" href="register.html">Registrarse</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/jquery.dataTables.min.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <!-- Contenido principal -->
+    <main>
+      <!-- Sección que contiene la tabla de administración de habitaciones -->
+      <section class="table-container">
+        <!-- Título de la sección -->
+        <h1 class="text-center">Administración de Habitaciones</h1>
+        <!-- Tabla que se llenará dinámicamente con AJAX -->
+        <table
+          id="tabla-habitaciones"
+          class="display table table-striped table-bordered"
+        >
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Número</th>
+              <th>Tipo</th>
+              <th>Precio por Noche</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Las filas se generarán dinámicamente -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="py-4 text-center">
+      <div class="container">
+        <!-- Información de derechos reservados -->
+        <p>&copy; 2023 Costa Esmeralda. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Enlaces a bibliotecas de JavaScript -->
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/datatables.min.js"></script>
+    <script>
+      // Inicializa la tabla de administración de habitaciones con DataTables
+      $(document).ready(function () {
+        $("#tabla-habitaciones").DataTable({
+          // Configuración de AJAX para cargar los datos desde el servidor
+          ajax: {
+            url: "/api/habitaciones", // URL de la API que proporciona los datos
+            dataSrc: "", // Fuente de datos, se espera un arreglo de objetos JSON
+          },
+          // Mapea las columnas de la tabla con los campos del objeto JSON
+          columns: [
+            { data: "id" }, // Columna para el ID de la habitación
+            { data: "numero" }, // Número de habitación
+            { data: "tipo" }, // Tipo de habitación
+            { data: "precio_noche" }, // Precio por noche
+            { data: "estado" }, // Estado de la habitación (Disponible/Ocupada)
+          ],
+        });
+      });
+    </script>
   </body>
 </html>
