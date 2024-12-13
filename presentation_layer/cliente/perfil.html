@@ -1,160 +1,187 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!-- Declaración del tipo de documento y configuración del idioma -->
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8" />
-    <!-- Codificación de caracteres -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Configuración para dispositivos responsivos -->
 
-    <!-- Enlace a hojas de estilo externas -->
+    <!-- Enlaces a hojas de estilo externas -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <!-- Estilos de Bootstrap -->
     <link rel="stylesheet" href="../assets/css/styles.css" />
-    <!-- Estilos personalizados -->
 
     <!-- Título de la página -->
-    <title>Hotel Costa Esmeralda - Registro de Usuario</title>
+    <title>Perfil de Usuario - Hotel Costa Esmeralda</title>
 
-    <!-- Estilos CSS internos para personalización adicional -->
+    <!-- Estilo interno -->
     <style>
-      /* Configuración general para ocupar toda la altura */
       html,
       body {
         height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
+        overflow-y: auto;
       }
-      /* Estilo claro para la barra de navegación */
-      .navbar-light {
-        background-color: #f8f9fa !important;
-      }
-      /* Estilo para el pie de página */
-      footer {
-        background-color: #f8f9fa;
-        color: black;
-      }
-      /* Centrado del contenido principal */
-      main {
-        flex: 1;
+      .profile-header {
+        min-height: 30vh;
+        background: url("...") no-repeat center center;
+        background-size: cover;
+        color: white;
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
       }
-      /* Bordes redondeados en los campos de formulario */
-      .form-control {
-        border-radius: 0.5rem;
+      .profile-header h1 {
+        margin: 0;
+        font-size: 3rem;
       }
-      /* Personalización del botón principal */
-      .btn-primary {
-        background-color: #007bff;
-        border: none;
-        border-radius: 0.5rem;
+      .profile-card {
+        max-width: 800px;
+        margin: auto;
+        margin-top: -100px;
+        position: relative;
+        z-index: 1;
       }
-      /* Efecto hover en el botón principal */
-      .btn-primary:hover {
-        background-color: #0056b3;
+      .profile-card img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 5px solid white;
+        margin-top: -75px;
+      }
+      .profile-details {
+        text-align: center;
+      }
+      .profile-details h2 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+      .profile-details p {
+        color: gray;
+        font-size: 1rem;
+      }
+      .section {
+        margin-top: 50px;
+        margin-bottom: 70px;
+        padding: 20px;
+      }
+      .edit-btn {
+        margin-top: 20px;
       }
     </style>
   </head>
   <body>
-    <!-- Encabezado con barra de navegación -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-          <!-- Logotipo y enlace a la página de inicio -->
-          <a class="navbar-brand" href="../index.html">Costa Esmeralda</a>
-
-          <!-- Botón para mostrar/ocultar el menú en pantallas pequeñas -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- Opciones del menú de navegación -->
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <!-- Enlace a la sección Sobre Nosotros -->
-              <li class="nav-item">
-                <a class="nav-link" href="../sobrenosotros.html">Sobre Nosotros</a>
-              </li>
-              <!-- Enlace a la página de inicio de sesión -->
-              <li class="nav-item">
-                <a class="nav-link" href="../login.html">Iniciar Sesión</a>
-              </li>
-            </ul>
-          </div>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">Costa Esmeralda</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../sobrenosotros.html"
+                >Sobre Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cerrar Sesión</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
+
+    <!-- Sección Header de Perfil -->
+    <header class="profile-header">
+      <div class="container">
+        <h1>Tu Perfil</h1>
+      </div>
     </header>
 
-    <!-- Contenido principal de la página -->
-    <main>
-      <section class="container">
-        <!-- Formulario de registro de usuario -->
-        <form id="form-registro" class="mt-4">
-          <!-- Campo para ingresar el nombre completo -->
-          <div class="form-group">
-            <label for="nombre">Nombre Completo</label>
-            <input
-              type="text"
-              class="form-control"
-              id="nombre"
-              placeholder="Ingresa tu nombre"
-              required
-            />
-          </div>
+    <!-- Tarjeta de Perfil -->
+    <div class="profile-card bg-white shadow p-4">
+      <div class="text-center">
+        <img src="../img/perfil.png" alt="Avatar del Usuario" />
+        <div class="profile-details">
+          <h2>Juan Pérez</h2>
+          <p>Usuario desde: Enero 2022</p>
+          <button class="btn btn-primary edit-btn">Editar Perfil</button>
+        </div>
+      </div>
+    </div>
 
-          <!-- Campo para ingresar el correo electrónico -->
-          <div class="form-group">
-            <label for="email">Correo Electrónico</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="Ingresa tu correo"
-              required
-            />
-          </div>
-
-          <!-- Campo para ingresar la contraseña -->
-          <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="Crea una contraseña"
-              required
-            />
-          </div>
-
-          <!-- Botón para enviar el formulario -->
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-3">
-              Registrarse
-            </button>
-          </div>
-        </form>
-      </section>
-    </main>
-
-    <!-- Pie de página -->
-    <footer class="py-4 text-center">
+    <!-- Sección de Reservas Recientes -->
+    <div class="container-fluid section">
       <div class="container">
-        <p>&copy; 2023 Costa Esmeralda. Todos los derechos reservados.</p>
+        <h2>Reservas Recientes</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Habitación Deluxe</h5>
+                <p class="card-text">
+                  Fecha: 12/12/2024<br />
+                  Precio: $200.00
+                </p>
+                <a href="reserva-detalles.html" class="btn btn-primary"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Suite Presidencial</h5>
+                <p class="card-text">
+                  Fecha: 25/11/2024<br />
+                  Precio: $500.00
+                </p>
+                <a href="reserva-detalles.html" class="btn btn-primary"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Habitación Estándar</h5>
+                <p class="card-text">
+                  Fecha: 10/11/2024<br />
+                  Precio: $120.00
+                </p>
+                <a href="reserva-detalles.html" class="btn btn-primary"
+                  >Ver Detalles</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="footer text-black mt-5 pt-4 pb-4 full-width-section"
+      style="background-color: #f8f9fa"
+    >
+      <div class="container">
+        <p class="mb-0 text-center">
+          &copy; 2024 Costa Esmeralda. Todos los derechos reservados.
+        </p>
       </div>
     </footer>
 
-    <!-- Enlaces a scripts JavaScript externos -->
+    <!-- Enlaces a JavaScript -->
     <script src="../assets/js/jquery-3.7.1.min.js"></script>
-    <!-- Librería jQuery -->
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Scripts de Bootstrap -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>
